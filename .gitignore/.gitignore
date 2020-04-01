@@ -1,0 +1,26 @@
+function ispalindrome(str) 
+{
+  //We get rid of non-alphanumeric characters with this regex 
+  var str2 = str.replace(/[^A-Za-z0-9]/g, "");
+      str2 = str2.toUpperCase(); //Capitalization
+  //We utilize an array to take advantage of the .split and .reverse method
+  var array = [];
+      array = str2.split("");
+      array = array.reverse();
+  //We compare the original string with the modified one
+  if(str2 === array.join(""))
+  {
+    return true;
+  }else
+  {
+    return false;
+
+  }
+}
+console.log(ispalindrome("eye"));
+console.log(ispalindrome("_eye"));
+console.log(ispalindrome("race car"));
+console.log(ispalindrome("not a palindrome"));
+console.log(ispalindrome("A man, a plan, a canal. Panama."));
+console.log(ispalindrome("A ;..m,;a'n;,/. a# p@l$an,# #a#'' c%a^n&al**. (Pan)ama."));
+//Line 25 and 24 are the same but return the same boolean 
